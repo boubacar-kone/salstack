@@ -3,4 +3,12 @@ sh salt-install.sh -M -A 127.0.0.1   #master
 sh salt-install.sh -A 192.168.10.5   #slave
 sh salt-install.sh -M -A 127.0.0.1 -I minion-id   #change default minion id
 
-salt-key  #view accepted, rejected keys
+salt-key (or salt-key -L)  #view accepted, rejected keys
+salt-key -f minion    #view minion key fingerprint from master
+salt-call --local key.finger  #view minion key fingerprint from minion machine.
+salt-key -a minion  #accept minion's key
+
+salt: TCP port 4505/4506
+
+salt '*' test.ping        #test if node is reachable
+salt '*' cmd.run          #run cmd on minion
