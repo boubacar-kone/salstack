@@ -1,0 +1,6 @@
+curl -L https://bootstrap.saltstack.com -o salt-install.sh
+sh salt-install.sh -M -A 127.0.0.1   #master
+sh salt-install.sh -A 192.168.10.5   #slave
+sh salt-install.sh -M -A 127.0.0.1 -I minion-id   #change default minion id
+
+salt-key  #view accepted, rejected keys
