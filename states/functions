@@ -1,0 +1,24 @@
+#targeting minions
+salt 'minion-id' state.apply
+
+#installing packages:
+pkg.installed:
+  -name:
+  
+#watch requisite  
+cmd.wait:
+  - name:
+  - cwd:
+  - watch:
+    - module: id
+    
+#install new user
+user.present:
+  - name:
+  - home:
+
+#clone repo
+git.latest:
+  - source: https://......git
+  - rev: master
+  - target:
